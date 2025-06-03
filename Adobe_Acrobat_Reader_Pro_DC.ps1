@@ -51,3 +51,13 @@ if ((Get-ItemPropertyValue -Path "HKLM:\SOFTWARE\Adobe\Adobe Acrobat\DC\RDCNotif
 	New-ItemProperty -Path "HKCU:\Software\Adobe\Adobe Acrobat\DC\RememberedViews" -Name iRememberView -PropertyType DWord -Value 2 -Force
 }
 #endregion UI
+
+
+
+
+# 32-bit architecture:
+# reg add "HKLM\SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown" /v bEnableGentech /t REG_DWORD /d 0 /f
+
+# 64-bit architecture:
+reg add "HKLM\SOFTWARE\Policies\Adobe\Adobe Acrobat\DC\FeatureLockDown" /v bEnableGentech /t REG_DWORD /d 0 /f
+
